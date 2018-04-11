@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import tarea3programacion2.Frutas;
 
 /**
  *
@@ -21,7 +22,7 @@ import javafx.scene.control.Label;
  */
 public class FXMLDocumentController implements Initializable {
     
-    public static ObservableList<String> listaFrutas = FXCollections.observableArrayList();
+    public static ObservableList<Frutas> listaFrutas = FXCollections.observableArrayList();
     
     
     @FXML
@@ -34,10 +35,6 @@ public class FXMLDocumentController implements Initializable {
     private ComboBox fruta2ComboBox ;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -47,11 +44,12 @@ public class FXMLDocumentController implements Initializable {
     }    
 
     private void llenarLista() {
-        listaFrutas.add("manzana");
-        listaFrutas.add("pera");
-        listaFrutas.add("limón");
-        listaFrutas.add("melón");
-        listaFrutas.add("naranja");
+        
+        listaFrutas.add(Frutas.Pera);
+        listaFrutas.add(Frutas.Manzana);
+        listaFrutas.add(Frutas.Melón);
+        listaFrutas.add(Frutas.Naranja);
+        listaFrutas.add(Frutas.Limón);
     }
 
     private void llenarComboBox() {
@@ -64,8 +62,113 @@ public class FXMLDocumentController implements Initializable {
     
     public void sumaButton(){
     
+        if(fruta1ComboBox.getValue().equals(Frutas.Pera) &&fruta2ComboBox.getValue().equals(Frutas.Pera)){
+            label.setText(Frutas.Pera.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Pera)&&fruta2ComboBox.getValue().equals(Frutas.Manzana)){
+            label.setText(Frutas.Melón.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Pera)&&fruta2ComboBox.getValue().equals(Frutas.Limón)){
+            label.setText(Frutas.Naranja.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Pera)&&fruta2ComboBox.getValue().equals(Frutas.Melón)){
+            label.setText(Frutas.Limón.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Pera)&&fruta2ComboBox.getValue().equals(Frutas.Naranja)){
+            label.setText(Frutas.Manzana.toString());
+        }
+        
+        
+        
+        if(fruta1ComboBox.getValue().equals(Frutas.Manzana) &&fruta2ComboBox.getValue().equals(Frutas.Pera)){
+            label.setText(Frutas.Melón.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Manzana)&&fruta2ComboBox.getValue().equals(Frutas.Manzana)){
+            label.setText(Frutas.Manzana.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Manzana)&&fruta2ComboBox.getValue().equals(Frutas.Limón)){
+            label.setText(Frutas.Naranja.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Manzana)&&fruta2ComboBox.getValue().equals(Frutas.Melón)){
+            label.setText(Frutas.Limón.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Manzana)&&fruta2ComboBox.getValue().equals(Frutas.Naranja)){
+            label.setText(Frutas.Pera.toString());
+        }
+        
+        
+        
+        if(fruta1ComboBox.getValue().equals(Frutas.Limón) &&fruta2ComboBox.getValue().equals(Frutas.Pera)){
+            label.setText(Frutas.Naranja.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Limón)&&fruta2ComboBox.getValue().equals(Frutas.Manzana)){
+            label.setText(Frutas.Pera.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Limón)&&fruta2ComboBox.getValue().equals(Frutas.Limón)){
+            label.setText(Frutas.Limón.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Limón)&&fruta2ComboBox.getValue().equals(Frutas.Melón)){
+            label.setText(Frutas.Manzana.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Limón)&&fruta2ComboBox.getValue().equals(Frutas.Naranja)){
+            label.setText(Frutas.Melón.toString());
+        }
+        
+        
+        
+        if(fruta1ComboBox.getValue().equals(Frutas.Melón) &&fruta2ComboBox.getValue().equals(Frutas.Pera)){
+            label.setText(Frutas.Manzana.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Melón)&&fruta2ComboBox.getValue().equals(Frutas.Manzana)){
+            label.setText(Frutas.Pera.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Melón)&&fruta2ComboBox.getValue().equals(Frutas.Limón)){
+            label.setText(Frutas.Naranja.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Melón)&&fruta2ComboBox.getValue().equals(Frutas.Melón)){
+            label.setText(Frutas.Melón.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Melón)&&fruta2ComboBox.getValue().equals(Frutas.Naranja)){
+            label.setText(Frutas.Limón.toString());
+        }
+        
+        
+         if(fruta1ComboBox.getValue().equals(Frutas.Naranja) &&fruta2ComboBox.getValue().equals(Frutas.Pera)){
+            label.setText(Frutas.Limón.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Naranja)&&fruta2ComboBox.getValue().equals(Frutas.Manzana)){
+            label.setText(Frutas.Melón.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Naranja)&&fruta2ComboBox.getValue().equals(Frutas.Limón)){
+            label.setText(Frutas.Pera.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Naranja)&&fruta2ComboBox.getValue().equals(Frutas.Melón)){
+            label.setText(Frutas.Manzana.toString());
+        }
+        if(fruta1ComboBox.getValue().equals(Frutas.Naranja)&&fruta2ComboBox.getValue().equals(Frutas.Naranja)){
+            label.setText(Frutas.Naranja.toString());
+        }
+        
+        
+        
+        
+     
+        
+        
+        
+        
+        
+        
+       
+        
+        
+        
+       
+        
+        
+       
+        
+//        label.setText(value);
     }
-    public void restaButton(){
     
-    }
 }
